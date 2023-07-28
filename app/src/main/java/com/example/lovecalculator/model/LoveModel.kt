@@ -9,4 +9,4 @@ data class LoveModel(
     var secondName: String,
     var percentage: String,
     var result: String
-)
+) : java.io.Serializable

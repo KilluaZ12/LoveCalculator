@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import com.example.lovecalculator.databinding.ActivityMainBinding
-import androidx.navigation.findNavController
 
 class MainActivity : AppCompatActivity() {
 

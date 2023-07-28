@@ -1,8 +1,10 @@
 package com.example.lovecalculator
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.databinding.FragmentResultBinding
 import com.example.lovecalculator.model.LoveModel
@@ -10,10 +12,14 @@ import com.example.lovecalculator.model.LoveModel
 class ResultFragment : Fragment() {
     lateinit var binding: FragmentResultBinding
 
-    private var result: String? = null
-    private var firstName: String? = null
-    private var secondName: String? = null
-
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentResultBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -27,13 +33,6 @@ class ResultFragment : Fragment() {
             findNavController().navigate(R.id.calculateFragment)
         }
 
-        if (arguments != null) {
-            result = arguments?.getSerializable(CalculateFragment.LOVE_MODEL) as String?
-
-            binding.tvResult.text = result
-            binding.tvFirstName.text = firstName
-            binding.tvSecondName.text = secondName
-        }
     }
 
     private fun getResult() {
