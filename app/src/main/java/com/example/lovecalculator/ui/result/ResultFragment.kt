@@ -1,4 +1,4 @@
-package com.example.lovecalculator
+package com.example.lovecalculator.ui.result
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentResultBinding
 import com.example.lovecalculator.model.LoveModel
+import com.example.lovecalculator.ui.calculate.CalculateFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ResultFragment : Fragment() {
     lateinit var binding: FragmentResultBinding
 
