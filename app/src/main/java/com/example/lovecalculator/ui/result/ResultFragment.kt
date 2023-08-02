@@ -36,6 +36,9 @@ class ResultFragment : Fragment() {
         binding.btnTryAgain.setOnClickListener {
             findNavController().navigate(R.id.calculateFragment)
         }
+        binding.btnHistory.setOnClickListener{
+            findNavController().navigate(R.id.historyFragment)
+        }
 
     }
 

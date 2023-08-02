@@ -11,4 +11,7 @@
     <string name="try_again">try again</string>
     <string name="plus">+</string>
     <string name="get_started">Get Started</string>
+    <string name="history">History</string>
+    <string name="forever">forever</string>
+    <string name="equal">=</string>
 </resources>

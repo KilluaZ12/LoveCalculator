@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.lovecalculator.App
 import com.example.lovecalculator.R
 import com.example.lovecalculator.data.local.Pref
 import com.example.lovecalculator.databinding.FragmentCalculateBinding
@@ -55,6 +56,7 @@ class CalculateFragment : Fragment() {
                     if (it.error != null) {
                         Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT).show()
                     } else {
+                        App.appDatabase.loveDao().insert(it)
                         findNavController().navigate(
                             R.id.resultFragment,
                             bundleOf(LOVE_MODEL to it)
@@ -62,6 +64,9 @@ class CalculateFragment : Fragment() {
                     }
                 }
             }
+        }
+        binding.btnHistory.setOnClickListener{
+            findNavController().navigate(R.id.historyFragment)
         }
     }
 
