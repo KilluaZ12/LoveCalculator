@@ -15,7 +15,7 @@ class Repository @Inject constructor(
     private val dao: LoveDao
 ) {
 
-    fun getAllData() = dao.getAll()
+    fun getAllData() = dao.getAllDataAlphabetically()
     fun getPercentage(firstName: String, secondName: String): MutableLiveData<LoveModel> {
         val liveData = MutableLiveData<LoveModel>()
         api.getPercentage(firstName, secondName).enqueue(object : Callback<LoveModel> {

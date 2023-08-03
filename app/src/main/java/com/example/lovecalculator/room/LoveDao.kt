@@ -1,7 +1,6 @@
 package com.example.lovecalculator.room
 
-import androidx.room.Dao
-import androidx.room.Insert
+import androidx.room.*
 import com.example.lovecalculator.model.LoveModel
 
 
@@ -13,4 +12,8 @@ interface LoveDao {
 
     @androidx.room.Query("SELECT * FROM love_table")
     fun getAll(): List<LoveModel>
+
+    @Query("SELECT * FROM love_table ORDER BY firstName ASC")
+    fun getAllDataAlphabetically(): List<LoveModel>
+
 }
