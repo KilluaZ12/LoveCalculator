@@ -6,6 +6,7 @@ import android.widget.Adapter
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.ItemOnBoardingBinding
 import com.example.lovecalculator.model.OnBoard
 
@@ -14,22 +15,23 @@ class OnBoardingAdapter(private val onClick: () -> Unit) :
 
     val list = arrayListOf(
         OnBoard(
-            "https://edit.sundayriley.com/wp-content/uploads/2019/08/break-up-apps-the-sunday-edit.jpg",
+            R.raw.animation_broken_heart,
             "Расстаться?",
             "Попробуй с другим человеком. Не опускай руки"
         ),
         OnBoard(
-            "https://play-lh.googleusercontent.com/XIPjvKSoBIuiaeqsXhO9iQQq2AJ90qv6DfOpoLWaLfwu8k5FxegF1rhWUcWT0Ah4Yw",
+
+            R.raw.animation_kiss,
             "Утони в любви",
             "Посмотри нужно ли тебе это"
         ),
         OnBoard(
-            "https://img.freepik.com/premium-vector/cute-couple-in-love-kissing-with-heart_76844-1888.jpg",
+            R.raw.animation_park,
             "Строй оношения",
             "Но не принимай это приложение в серьёз"
         ),
         OnBoard(
-            "https://img.freepik.com/premium-vector/cute-couple-in-love-valentine-s-day_73637-43.jpg?w=2000",
+            R.raw.animation_live,
             "Живи и наслаждайся",
             "Не трать время зря. Женись чувак!!!"
         )
@@ -56,7 +58,7 @@ class OnBoardingAdapter(private val onClick: () -> Unit) :
 
         fun onBind(onBoard: OnBoard) {
             with(binding) {
-                ivOnboard.load(onBoard.image)
+                lottieAnimationView.setAnimation(onBoard.anim!!)
                 tvTitle.text = onBoard.title
                 tvDesc.text = onBoard.description
                 binding.btnStart.isVisible = adapterPosition == list.lastIndex
